@@ -24,30 +24,33 @@ using namespace std;
 
 int main(int argc, char* argv[]) {
 
-	string month; 
+	string month, year;
 
 	cout << "Please enter the month: ";
 	cin >> month;
+
+	cout << "Please enter the year: ";
+	cin >> year;
 	
 	double total_cost;
+
+	const double STATE_TAX = 0.04;
+	const double COUNTY_TAX = 0.02;
 
 	
 	cout << "\n\nPlease enter the total cost: ";
 	cin >> total_cost;
 	
-	double revenue = total_cost / 1.06;
+	double revenue = total_cost / (1 + STATE_TAX + COUNTY_TAX);
 
-	double state_tax = revenue * .04;
-	double county_tax = revenue * .02;
-
-	cout << "\n\nMonth: " << month << endl
+	cout << "\n\nMonth: " << month << "Year: " << year << endl
 		<< "-------------------" << endl
 		<< setprecision(2) << fixed
 		<< "Total Collected:\t$" << total_cost << endl
 		<< "Sales:\t\t\t$" << revenue << endl
-		<< "Count Sales Tax:\t$" << county_tax << endl
-		<< "State Sales Tax:\t$" << state_tax << endl
-		<< "Total Sales Tax:\t$" << county_tax + state_tax << endl;
+		<< "Count Sales Tax:\t$" << COUNTY_TAX * revenue << endl
+		<< "State Sales Tax:\t$" << STATE_TAX * revenue << endl
+		<< "Total Sales Tax:\t$" << (COUNTY_TAX + STATE_TAX) * revenue << endl;
 
 
 	return 0;
