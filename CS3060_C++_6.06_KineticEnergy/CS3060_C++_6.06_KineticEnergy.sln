@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.757
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CS3060_C++_6.06_KineticEnergy", "CS3060_C++_6.06_KineticEnergy\CS3060_C++_6.06_KineticEnergy.vcxproj", "{DEAC94DF-071C-48F6-8C6B-AE4E2486DCBA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DEAC94DF-071C-48F6-8C6B-AE4E2486DCBA}.Debug|x64.ActiveCfg = Debug|x64
+		{DEAC94DF-071C-48F6-8C6B-AE4E2486DCBA}.Debug|x64.Build.0 = Debug|x64
+		{DEAC94DF-071C-48F6-8C6B-AE4E2486DCBA}.Debug|x86.ActiveCfg = Debug|Win32
+		{DEAC94DF-071C-48F6-8C6B-AE4E2486DCBA}.Debug|x86.Build.0 = Debug|Win32
+		{DEAC94DF-071C-48F6-8C6B-AE4E2486DCBA}.Release|x64.ActiveCfg = Release|x64
+		{DEAC94DF-071C-48F6-8C6B-AE4E2486DCBA}.Release|x64.Build.0 = Release|x64
+		{DEAC94DF-071C-48F6-8C6B-AE4E2486DCBA}.Release|x86.ActiveCfg = Release|Win32
+		{DEAC94DF-071C-48F6-8C6B-AE4E2486DCBA}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {78EFAB51-3BA3-4E63-9991-C5CEA3F7AF62}
+	EndGlobalSection
+EndGlobal
