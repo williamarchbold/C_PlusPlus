@@ -20,9 +20,9 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{67E17642-92CA-421E-BD61-714E2C1092ED}</ProjectGuid>
+    <ProjectGuid>{EB96275E-71EA-4EBC-A101-03CA4040C7FD}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>CS3060C908ArrayPointers</RootNamespace>
+    <RootNamespace>CS3060C908PointersModeOfArray</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -139,7 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Q9.08_main.cpp" />
+    <ClCompile Include="..\..\..\CS 3060 C++\Week 4 Submission\9.08\Q9.08_main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
