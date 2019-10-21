@@ -8,26 +8,48 @@
 
 using namespace std;
 
-struct Node
+struct Node //4 bytes for data 4 bytes for next address total 8 bytes
 {
 	int data;
 	Node* next;
+};
+
+struct Doubly_Node //12 bytes per node
+{
+	int data;
+	Doubly_Node* next;
+	Doubly_Node* previous;
 };
 
 
 void Insert(Node* &head, int x); //Node* Insert(Node* head, int x); return head
 void Insert(Node* &head, int data, int n);
 void Delete(Node* &head, int n);
+void Reverse(Node* &head);
+Node* ReverseRecursively(Node* head);
 void Print(Node* head); //void Print(Node* head)
+void PrintRecursively(Node* head);
+void PrintReverseRecursively(Node* head);
+
+Doubly_Node* GetNewNode(int x);
+void InsertAtHead(Doubly_Node* &head, int x);
+void InsertAtTail(Doubly_Node* &head, int x);
+void PrintDoublyLinkedList(Doubly_Node* const &head);
+void PrintDoublyLinkedListBackwards(Doubly_Node* const &head);
 
 int main()
 {
 	Node* head_one = nullptr;
-	
-	Insert(head_one, 2);
-	Insert(head_one, 1);
-	Delete(head_one, 2);
-	Print(head_one);
+
+	Doubly_Node* doubly_head_one = nullptr;
+	InsertAtHead(doubly_head_one, 1);
+	InsertAtHead(doubly_head_one, 2);
+	InsertAtHead(doubly_head_one, 3);
+	InsertAtHead(doubly_head_one, 4);
+	InsertAtHead(doubly_head_one, 5);
+	InsertAtTail(doubly_head_one, 6);
+
+	PrintDoublyLinkedList(doubly_head_one);
 
 	return 0;
 }
@@ -120,6 +142,35 @@ void Delete(Node *& head, int n)
 	}
 }
 
+void Reverse(Node *& head)
+{
+	Node* current, *previous, *next;
+	current = head;
+	previous = nullptr;
+	
+	while (current != NULL)
+	{
+		next = current->next;
+		current->next = previous;
+		previous = current;
+		current = next;
+	}
+	head = previous;
+}
+
+Node* ReverseRecursively(Node* head)
+{
+	if (head->next == NULL)
+	{
+		return head;
+	}
+	Node* new_location_of_head = ReverseRecursively(head->next);
+	Node* p = head->next; //can also do head->next->next = head;
+	p->next = head;
+	head->next = nullptr;
+	return new_location_of_head;
+}
+
 void Print(Node* head)
 {
 	Node* temp = head; //use temp because we don't want to loose head
@@ -128,4 +179,105 @@ void Print(Node* head)
 		cout << temp->data << " ";
 		temp = temp->next;
 	}
+}
+
+void PrintRecursively(Node * head)
+{
+	if (head)
+	{
+		cout << head->data << " ";
+		PrintRecursively(head->next);
+	}
+	else
+	{
+		cout << endl;
+	}
+	
+}
+
+void PrintReverseRecursively(Node * head)
+{
+	if (head)
+	{
+		PrintReverseRecursively(head->next);
+		cout << head->data << " ";
+	}
+	else
+	{
+		cout << endl;
+	}
+}
+
+Doubly_Node * GetNewNode(int x)
+{
+	Doubly_Node* node = new Doubly_Node();
+	node->data = x;
+	node->next = nullptr;
+	node->previous = nullptr;
+	return node;
+}
+
+void InsertAtHead(Doubly_Node* &head, int x)
+{
+	Doubly_Node* temp = GetNewNode(x);
+	if (head == nullptr)
+	{
+		head = temp;
+	}
+	else
+	{
+		temp->next = head;
+		head->previous = temp;
+		head = temp;
+	}
+}
+
+void InsertAtTail(Doubly_Node *& head, int x)
+{
+	Doubly_Node* new_node = GetNewNode(x);
+	if (head == nullptr)
+	{
+		head = new_node;
+	}
+	else
+	{
+		Doubly_Node* temp_ptr = head;
+		while (temp_ptr->next)
+		{
+			temp_ptr = temp_ptr->next;
+		}
+		temp_ptr->next = new_node;
+		new_node->previous = temp_ptr;
+	}
+	
+
+}
+
+void PrintDoublyLinkedList(Doubly_Node* const &head)
+{
+	Doubly_Node* node_ptr = head;
+	cout << "\nList Forward: ";
+	while (node_ptr)
+	{
+		cout << node_ptr->data << " ";
+		node_ptr = node_ptr->next;
+	}
+	cout << endl;
+}
+
+void PrintDoublyLinkedListBackwards(Doubly_Node * const & head)
+{
+	Doubly_Node* node_ptr = head;
+	if (node_ptr == nullptr) return;
+	while (node_ptr->next)
+	{
+		node_ptr->next;
+	}
+	cout << endl << "List backwards: ";
+	while (node_ptr)
+	{
+		cout << node_ptr->data << " ";
+		node_ptr = node_ptr->next;
+	}
+	cout << endl;
 }
