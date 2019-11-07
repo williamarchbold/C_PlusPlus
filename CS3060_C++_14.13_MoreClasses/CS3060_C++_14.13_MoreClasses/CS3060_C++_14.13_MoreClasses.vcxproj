@@ -20,9 +20,9 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{45141048-152D-4EE7-888C-1AD8C1503ED6}</ProjectGuid>
+    <ProjectGuid>{18BFF8F2-9CCB-4099-9AD9-D23E49A50575}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>CLinkedListImplementation</RootNamespace>
+    <RootNamespace>CS3060C1413MoreClasses</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -139,10 +139,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Linked_LIst_Implementation_main.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="StacksAsLinkedLists_main.cpp" />
+    <ClInclude Include="FeetInches.h" />
+    <ClInclude Include="RoomCarpet.h" />
+    <ClInclude Include="RoomDimension.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="FeetInches.cpp" />
+    <ClCompile Include="Q14.13_main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -64,12 +64,6 @@ public:
 			return false;
 		if (!isValidBST(root->right))
 			return false; 
-		/*if ((root->left != nullptr) && !(root->left->val < root->val))
-			return false;
-		if ((root->right != nullptr) && !(root->right->val > root->val))
-			return false;
-		//recursively look at children of node
-		*/
 
 		return true;
 	}
@@ -85,20 +79,6 @@ public:
 			return false;
 		if (root->val == child_node->val)
 			return false;
-		/*{
-			if (root->val >= child_node->val)
-			{
-				return false;
-			}
-		}
-		//test right is false so testing to the left
-		else
-		{
-			if (root->val <= child_node->val)
-			{
-				return false;
-			}
-		}*/
 		if (!isSubTreeValid(root, child_node->left, test_right))
 		{
 			return false;

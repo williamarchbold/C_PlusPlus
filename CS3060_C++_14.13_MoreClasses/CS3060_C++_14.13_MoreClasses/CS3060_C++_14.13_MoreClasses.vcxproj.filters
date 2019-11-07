@@ -15,10 +15,21 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Linked_LIst_Implementation_main.cpp">
+    <ClInclude Include="RoomDimension.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FeetInches.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RoomCarpet.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="FeetInches.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="StacksAsLinkedLists_main.cpp">
+    <ClCompile Include="Q14.13_main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
