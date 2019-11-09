@@ -41,16 +41,28 @@ FeetInches FeetInches::operator * (const FeetInches &right)
 {
 	FeetInches temp;
 
+	float FeetFraction = (float)getFeet();
+	FeetFraction += (float)getInches() / 12.0f;
+
+	float RightFeetFraction = (float)right.getFeet();
+	RightFeetFraction += (float)right.getInches() / 12.0f;
+
+	float Result = FeetFraction * RightFeetFraction;
+	temp.feet = (int)Result;
+	Result -= (float)temp.feet;
+	temp.inches = (int)(Result * 12.0f);
+
+	//float Result
 	/*int totalInches = getTotalInches() * right.getTotalInches();
 	temp.inches = totalInches;
 	temp.Simplify();
 	*/
-	int total_feet = getFeet() * right.getFeet();
+	/*int total_feet = getFeet() * right.getFeet();
 	int total_inches = getInches() * right.getInches();
 
 	temp.setFeet(total_feet);
 	temp.setInches(total_inches);
-	temp.Simplify();
+	temp.Simplify();*/
 	return temp;
 }
 

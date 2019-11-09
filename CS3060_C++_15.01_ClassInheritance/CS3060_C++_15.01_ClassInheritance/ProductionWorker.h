@@ -3,6 +3,7 @@
 #ifndef PRODUCTIONWORKER_H
 #define PRODUCTIONWORKER_H
 
+#include <string>
 #include "Employee.h"
 
 using namespace std;
@@ -10,13 +11,37 @@ using namespace std;
 class ProductionWorker : public Employee
 {
 private:
-	int shift;
+	int shift; //integer with 1 for day 2 for night
 	double hourly_pay_rate;
 
 public:
 
+	void setShift(int num)
+	{ shift = num; }
 
+	int getShift()
+	{ return shift; }
 
+	void setHourlyRate(double num)
+	{ hourly_pay_rate = num; }
+
+	double setHourlyRate()
+	{ return hourly_pay_rate; }
+
+	ProductionWorker(string name, int num, string hire_date, int time, double rate) : Employee(name, num, hire_date)
+	{
+		if (time==1 || time ==2)
+		{
+			shift = time;
+		}
+		else
+		{
+			shift = 1;
+		}
+		hourly_pay_rate = rate;
+	}
 };
+
+
 #endif // !PRODUCTIONWORKER_H
 

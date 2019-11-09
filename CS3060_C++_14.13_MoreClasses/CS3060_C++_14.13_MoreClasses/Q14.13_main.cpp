@@ -29,13 +29,13 @@ int main()
 	while (cost != -1)
 	{
 		room_carpet.SetCostPerSqFoot(cost);
-		cout << "Please enter room length(feet/inches)";
+		cout << "Please enter room length(feet [space] inches)";
 		cin >> length;
-		cout << "Please enter room width(feet/inches)";
+		cout << "Please enter room width(feet [space] inches)";
 		cin >> width;
 		room_carpet.SetRoomSize(length, width);
 		cout << "Price of carpet is $" << setprecision(2) << fixed << room_carpet.getCarpetCost() << endl;
-		cout << "Please enter the cost per square foot: $";
+		cout << "Please enter the cost per square foot (-1 to exit): $";
 		cin >> cost;
 
 

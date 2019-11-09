@@ -20,9 +20,9 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{23CE5A21-0AED-4A57-A915-66868879B2B4}</ProjectGuid>
+    <ProjectGuid>{41D8ADDB-8D39-4B0A-A172-0A8A0EC51823}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>CS3060C1501ClassInheritance</RootNamespace>
+    <RootNamespace>CS3060C1504ClassInheritanceMore</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -139,11 +139,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Employee.h" />
-    <ClInclude Include="ProductionWorker.h" />
+    <ClInclude Include="MilTime.h" />
+    <ClInclude Include="Time.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Q15.1_main.cpp" />
+    <ClCompile Include="Q15.04_main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

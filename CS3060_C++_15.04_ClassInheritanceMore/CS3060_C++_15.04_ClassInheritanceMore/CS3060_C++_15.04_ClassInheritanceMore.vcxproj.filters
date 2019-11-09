@@ -15,15 +15,15 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Employee.h">
+    <ClInclude Include="Time.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ProductionWorker.h">
+    <ClInclude Include="MilTime.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Q15.1_main.cpp">
+    <ClCompile Include="Q15.04_main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
