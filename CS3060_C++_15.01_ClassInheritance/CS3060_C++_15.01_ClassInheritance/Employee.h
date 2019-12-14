@@ -3,6 +3,7 @@
 #ifndef EMPLOYEE_H
 #define EMPLOYEE_H
 
+#include <iostream>
 #include <string>
 
 using namespace std;
@@ -35,6 +36,13 @@ public:
 
 	string getHireDate()
 	{ return hire_date; }
+
+	void DisplayInfo()
+	{
+		cout << "\nName: " << name << endl;
+		cout << "Number: " << number << endl;
+		cout << "Hire date: " << hire_date << endl;
+	}
 
 };
 

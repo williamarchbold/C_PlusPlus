@@ -40,6 +40,13 @@ public:
 		}
 		hourly_pay_rate = rate;
 	}
+
+	void DisplayInfo()
+	{
+		Employee::DisplayInfo();
+		cout << "Shift: " << shift << endl;
+		cout << "Pay Rate: " << hourly_pay_rate << endl;
+	}
 };
 
 

@@ -16,4 +16,7 @@ int main()
 	ProductionWorker * worker_one = new ProductionWorker("Mike", 128, "03Mar2019", 1, 25.4);
 	worker_one->setHireDate("05Mar2019");
 
+	worker_one->DisplayInfo();
+
+	return 0;
 }

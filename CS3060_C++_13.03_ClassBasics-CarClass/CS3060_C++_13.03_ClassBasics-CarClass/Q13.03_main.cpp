@@ -33,8 +33,6 @@ int main()
 		cout << "The " << newcar->getMake() << " braked. Speed is now " << newcar->getSpeed() << ".\n\n";
 	}
 
-
-
 	delete newcar;
 	newcar = nullptr;
 	return 0;

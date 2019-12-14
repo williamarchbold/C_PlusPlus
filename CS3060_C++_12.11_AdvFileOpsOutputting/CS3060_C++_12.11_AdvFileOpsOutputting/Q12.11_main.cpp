@@ -21,6 +21,8 @@ using namespace std;
 
 const int SIZE = 12;
 
+bool isNegative(double value);
+
 struct Division
 {
 	char division_name[SIZE];
@@ -43,8 +45,12 @@ int main()
 	for (qtr = 1; qtr <= 4; qtr++)
 	{
 		east.quarter = qtr;
-		cout << "\tQuarter" << qtr << ":";
-		cin >> east.sales;
+		do
+		{
+			cout << "\tQuarter" << qtr << ":";
+			cin >> east.sales;
+		} while (isNegative(east.sales));
+		
 		file.write(reinterpret_cast<char*>(&east), sizeof(east)); //always typecast 1st argument to char* for binary file. 
 	}
 
@@ -52,8 +58,12 @@ int main()
 	for (qtr = 1; qtr <= 4; qtr++)
 	{
 		west.quarter = qtr;
-		cout << "\tQuarter" << qtr << ":";
-		cin >> west.sales;
+		do
+		{
+			cout << "\tQuarter" << qtr << ":";
+			cin >> west.sales;
+		} while (isNegative(east.sales));
+		
 		file.write(reinterpret_cast<char*>(&west), sizeof(west));
 	}
 
@@ -61,8 +71,12 @@ int main()
 	for (qtr = 1; qtr <= 4; qtr++)
 	{
 		north.quarter = qtr;
-		cout << "\tQuarter" << qtr << ":";
-		cin >> north.sales;
+		do
+		{
+			cout << "\tQuarter" << qtr << ":";
+			cin >> north.sales;
+		} while (isNegative(east.sales));
+		
 		file.write(reinterpret_cast<char*>(&north), sizeof(north));
 	}
 
@@ -70,12 +84,30 @@ int main()
 	for (qtr = 1; qtr <= 4; qtr++)
 	{
 		south.quarter = qtr;
-		cout << "\tQuarter" << qtr << ":";
-		cin >> south.sales;
+		do
+		{
+			cout << "\tQuarter" << qtr << ":";
+			cin >> south.sales;
+		} while (isNegative(east.sales));
+		
 		file.write(reinterpret_cast<char*>(&south), sizeof(south));
 	}
 
 	file.close();
 	return 0;
 
+
+}
+
+bool isNegative(double value)
+{
+	if (value <= 0)
+	{
+		cout << "\nCannot be negative.\n";
+		return true;
+	}
+	else
+	{
+		return false;
+	}
 }
