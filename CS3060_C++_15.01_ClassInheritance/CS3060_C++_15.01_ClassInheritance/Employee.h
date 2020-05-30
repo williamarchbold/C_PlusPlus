@@ -11,19 +11,29 @@ using namespace std;
 class Employee
 {
 private:
-	string name;
+	string first_name;
+	string last_name;
+	char gender; 
 	int number;
 	string hire_date;
 
 public:
-	Employee(string n, int num, string hireDate)
-	{ name = n; number = num; hire_date = hireDate; }
+	Employee(string first, string last, char g, int num, string hireDate)
+	{
+		first_name = first; last_name = last; gender = g; number = num; hire_date = hireDate;
+	}
 
-	void setName(string input)
-	{ name = input; }
+	void setFirst(string input)
+	{ first_name = input; }
 
-	string getName() 
-	{ return name; }
+	string getFirst() 
+	{ return first_name; }
+
+	void setLast(string input)
+	{ last_name = input; }
+
+	string getLast()
+	{ return last_name; }
 
 	void setNumber(int num)
 	{ number = num; }
@@ -39,9 +49,12 @@ public:
 
 	void DisplayInfo()
 	{
-		cout << "\nName: " << name << endl;
+		cout << "\nFirst: " << first_name << endl;
+		cout << "\nLast: " << last_name << endl;
+		cout << "\nGender: " << gender << endl;
 		cout << "Number: " << number << endl;
 		cout << "Hire date: " << hire_date << endl;
+
 	}
 
 };

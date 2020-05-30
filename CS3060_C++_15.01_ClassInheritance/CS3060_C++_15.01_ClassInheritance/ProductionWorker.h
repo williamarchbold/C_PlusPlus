@@ -28,7 +28,7 @@ public:
 	double setHourlyRate()
 	{ return hourly_pay_rate; }
 
-	ProductionWorker(string name, int num, string hire_date, int time, double rate) : Employee(name, num, hire_date)
+	ProductionWorker(string first, string last, char g, int num, string hire_date, int time, double rate) : Employee(first, last, g, num, hire_date)
 	{
 		if (time==1 || time ==2)
 		{

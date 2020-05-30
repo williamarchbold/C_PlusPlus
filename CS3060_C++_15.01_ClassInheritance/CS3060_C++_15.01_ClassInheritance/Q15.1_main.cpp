@@ -1,4 +1,6 @@
 /*
+THIS IS QUESTION 26 on the FINAL
+
 William Archbold
 CS 3060 Obj Oriented Programming C++
 12 Oct 2019
@@ -13,8 +15,8 @@ using namespace std;
 
 int main()
 {
-	ProductionWorker * worker_one = new ProductionWorker("Mike", 128, "03Mar2019", 1, 25.4);
-	worker_one->setHireDate("05Mar2019");
+	ProductionWorker * worker_one = new ProductionWorker("Mike", "Johnson", 'M', 123, "March 2019", 1, 15.25);
+	worker_one->setHireDate("November 1917");
 
 	worker_one->DisplayInfo();
 
