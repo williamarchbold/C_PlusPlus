@@ -23,75 +23,93 @@ const int SIZE = 12;
 
 bool isNegative(double value);
 
-struct Division
+struct Dispensary
 {
 	char division_name[SIZE];
 	int quarter;
-	double sales;
+	double sales_quarter;
+	double sales_year;
 };
 
 int main()
 {
-	fstream file("corp.dat", ios::out | ios::binary);
-	Division east, west, north, south;
+	fstream file("dispensaries.dat", ios::out | ios::binary);
+	Dispensary Manitou, Denver, Boulder, Estes_Park;
 	int qtr;
 
-	strcpy_s(east.division_name, "East");
-	strcpy_s(west.division_name, "West");
-	strcpy_s(north.division_name, "North");
-	strcpy_s(south.division_name, "South");
+	strcpy_s(Manitou.division_name, "Manitou");
+	strcpy_s(Denver.division_name, "Denver");
+	strcpy_s(Boulder.division_name, "Boulder");
+	strcpy_s(Estes_Park.division_name, "Estes Park");
 
-	cout << "\nEnter quarterly sales for" << east.division_name << " division.\n ";
+	file.write(reinterpret_cast<char*>(&Manitou.division_name), sizeof(Manitou.division_name));
+	cout << "\nEnter quarterly sales for" << Manitou.division_name << " division.\n ";
 	for (qtr = 1; qtr <= 4; qtr++)
 	{
-		east.quarter = qtr;
+		Manitou.quarter = qtr;
 		do
 		{
 			cout << "\tQuarter" << qtr << ":";
-			cin >> east.sales;
-		} while (isNegative(east.sales));
-		
-		file.write(reinterpret_cast<char*>(&east), sizeof(east)); //always typecast 1st argument to char* for binary file. 
-	}
+			cin >> Manitou.sales_quarter;
+		} while (isNegative(Manitou.sales_quarter));
 
-	cout << "\nEnter quarterly sales for" << west.division_name << " division.\n ";
+		Manitou.sales_year += Manitou.sales_quarter;
+		
+		file.write(reinterpret_cast<char*>(&Manitou.sales_quarter), sizeof(Manitou.sales_quarter)); //always typecast 1st argument to char* for binary file. 
+	}
+	file.write(reinterpret_cast<char*>(&Manitou.sales_year), sizeof(Manitou.sales_year));
+
+	file.write(reinterpret_cast<char*>(&Denver.division_name), sizeof(Denver.division_name));
+	cout << "\nEnter quarterly sales for" << Denver.division_name << " division.\n ";
 	for (qtr = 1; qtr <= 4; qtr++)
 	{
-		west.quarter = qtr;
+		Denver.quarter = qtr;
 		do
 		{
 			cout << "\tQuarter" << qtr << ":";
-			cin >> west.sales;
-		} while (isNegative(east.sales));
+			cin >> Denver.sales_quarter;
+		} while (isNegative(Denver.sales_quarter));
 		
-		file.write(reinterpret_cast<char*>(&west), sizeof(west));
-	}
+		Denver.sales_year += Denver.sales_quarter;
 
-	cout << "\nEnter quarterly sales for" << north.division_name << " division.\n ";
+		file.write(reinterpret_cast<char*>(&Denver.sales_quarter), sizeof(Denver.sales_quarter));
+	}
+	file.write(reinterpret_cast<char*>(&Denver.sales_year), sizeof(Denver.sales_year));
+
+
+	file.write(reinterpret_cast<char*>(&Boulder.division_name), sizeof(Boulder.division_name));
+	cout << "\nEnter quarterly sales for" << Boulder.division_name << " division.\n ";
 	for (qtr = 1; qtr <= 4; qtr++)
 	{
-		north.quarter = qtr;
+		Boulder.quarter = qtr;
 		do
 		{
 			cout << "\tQuarter" << qtr << ":";
-			cin >> north.sales;
-		} while (isNegative(east.sales));
-		
-		file.write(reinterpret_cast<char*>(&north), sizeof(north));
-	}
+			cin >> Boulder.sales_quarter;
+		} while (isNegative(Boulder.sales_quarter));
 
-	cout << "\nEnter quarterly sales for" << south.division_name << " division.\n ";
+		Boulder.sales_year += Boulder.sales_quarter;
+		
+		file.write(reinterpret_cast<char*>(&Boulder.sales_quarter), sizeof(Boulder.sales_quarter));
+	}
+	file.write(reinterpret_cast<char*>(&Boulder.sales_year), sizeof(Boulder.sales_year));
+
+	file.write(reinterpret_cast<char*>(&Estes_Park.division_name), sizeof(Estes_Park.division_name));
+	cout << "\nEnter quarterly sales for" << Estes_Park.division_name << " division.\n ";
 	for (qtr = 1; qtr <= 4; qtr++)
 	{
-		south.quarter = qtr;
+		Estes_Park.quarter = qtr;
 		do
 		{
 			cout << "\tQuarter" << qtr << ":";
-			cin >> south.sales;
-		} while (isNegative(east.sales));
+			cin >> Estes_Park.sales_quarter;
+		} while (isNegative(Estes_Park.sales_quarter));
 		
-		file.write(reinterpret_cast<char*>(&south), sizeof(south));
+		Estes_Park.sales_year += Estes_Park.sales_quarter;
+
+		file.write(reinterpret_cast<char*>(&Estes_Park.sales_quarter), sizeof(Estes_Park.sales_quarter));
 	}
+	file.write(reinterpret_cast<char*>(&Estes_Park.sales_year), sizeof(Estes_Park.sales_year));
 
 	file.close();
 	return 0;
