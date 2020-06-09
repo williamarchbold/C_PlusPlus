@@ -34,11 +34,24 @@ int main()
 		Entity* entity4 = new Entity("Chernoble"); //new returns an entity pointer/the location
 		e2 = entity4;
 		std::cout << (*entity4).GetName() << std::endl;
+		delete e2; //this wasn't in video. added just to be correct
 	}
 	//at this point entity4 is gone, but e2 is still pointing to the Entity object created on the heap
 
-	delete e;
-	delete e2;
+	
+
+	int a = 2;
+	int* b = new int; //new return a pointer to memory allocated and b stores its memory address
+
+	Entity* e3 = new Entity(); //new is an overloaded word. 
+	Entity* e5 = new Entity[2]; //different overloaded version of new
+
+	Entity* e4 = (Entity*)malloc(sizeof(Entity)); //new is the equivalent of this
+
+	std::cout << sizeof(Entity) << std::endl;
+
+	delete e3,e4;
+	delete[] e5;
 
 	std::cin.get();
 }
