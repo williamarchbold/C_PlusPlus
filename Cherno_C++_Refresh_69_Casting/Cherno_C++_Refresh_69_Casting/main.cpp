@@ -1,0 +1,1 @@
+//c++ is strongly typed language. conversion requires either implicit or explicit conversion
