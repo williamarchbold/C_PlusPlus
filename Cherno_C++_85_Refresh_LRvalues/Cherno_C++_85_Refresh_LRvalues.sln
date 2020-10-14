@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30413.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Cherno_C++_85_Refresh_LRvalues", "Cherno_C++_85_Refresh_LRvalues\Cherno_C++_85_Refresh_LRvalues.vcxproj", "{51F47E69-16CE-41E5-AA16-54EF4922AC57}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{51F47E69-16CE-41E5-AA16-54EF4922AC57}.Debug|x64.ActiveCfg = Debug|x64
+		{51F47E69-16CE-41E5-AA16-54EF4922AC57}.Debug|x64.Build.0 = Debug|x64
+		{51F47E69-16CE-41E5-AA16-54EF4922AC57}.Debug|x86.ActiveCfg = Debug|Win32
+		{51F47E69-16CE-41E5-AA16-54EF4922AC57}.Debug|x86.Build.0 = Debug|Win32
+		{51F47E69-16CE-41E5-AA16-54EF4922AC57}.Release|x64.ActiveCfg = Release|x64
+		{51F47E69-16CE-41E5-AA16-54EF4922AC57}.Release|x64.Build.0 = Release|x64
+		{51F47E69-16CE-41E5-AA16-54EF4922AC57}.Release|x86.ActiveCfg = Release|Win32
+		{51F47E69-16CE-41E5-AA16-54EF4922AC57}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2696DE29-4C13-4F50-803A-7635048ED29B}
+	EndGlobalSection
+EndGlobal
